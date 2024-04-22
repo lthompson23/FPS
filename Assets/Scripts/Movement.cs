@@ -106,7 +106,7 @@ public class Movement : MonoBehaviour
         }
 
         if (isWallRight || isWallLeft && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
-            rb.AddForce(-orientation.up * jumpSpeed * 1f);
+            rb.AddForce(orientation.up * jumpSpeed * 5f);
 
         if (isWallRight && Input.GetKey(KeyCode.A))
             rb.AddForce(-orientation.right * jumpSpeed * 3.2f);
