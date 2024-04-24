@@ -11,6 +11,8 @@ public class EnemyBehavior : MonoBehaviour
 
     
 
+    public AudioSource shooting;
+
     public Transform player;
 
     public LayerMask whatIsGround;
@@ -55,7 +57,10 @@ public class EnemyBehavior : MonoBehaviour
             Patrol();
 
         if (inSightRange && !inAttackRange)
+        {
             Chase();
+        }
+            
 
         if (inSightRange && inAttackRange) 
             Attack();
@@ -87,6 +92,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     public void Chase()
     {
+        
         agent.SetDestination(player.position);
     }
     public void Attack()
@@ -101,7 +107,7 @@ public class EnemyBehavior : MonoBehaviour
             
             GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, bulletPoint.transform.rotation);
 
-           
+            shooting.Play(); 
             Vector3 direction = Camera.main.transform.forward;
 
             

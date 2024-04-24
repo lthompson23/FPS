@@ -8,7 +8,13 @@ public class EnemyBullet : MonoBehaviour
 
     public float lifetimeCounter;
 
-
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == ("Untagged"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     public float speed;
     // Update is called once per frame

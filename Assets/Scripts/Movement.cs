@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour
 
     public float lookXLimit = 45.0f;
 
+   
+
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -108,10 +110,10 @@ public class Movement : MonoBehaviour
         if (isWallRight || isWallLeft && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
             rb.AddForce(orientation.up * jumpSpeed * 5f);
 
-        if (isWallRight && Input.GetKey(KeyCode.A))
+        if (isWallLeft && Input.GetKey(KeyCode.A))
             rb.AddForce(-orientation.right * jumpSpeed * 3.2f);
 
-        if (isWallLeft && Input.GetKey(KeyCode.D))
+        if (isWallRight && Input.GetKey(KeyCode.D))
             rb.AddForce(orientation.right * jumpSpeed * 3.2f);
 
         rb.AddForce(orientation.forward * jumpSpeed * 1f);

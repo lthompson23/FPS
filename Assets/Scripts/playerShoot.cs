@@ -7,6 +7,8 @@ public class playerShoot : MonoBehaviour
 {
     public float lifetime;
 
+    public AudioSource shoot; 
+
     public float lifetimeCounter;
 
     public float fireCooldown;
@@ -30,6 +32,7 @@ public class playerShoot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            shoot.Play();
             // Instantiate the bullet at bulletPoint's position and rotation
             GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, bulletPoint.transform.rotation);
 
