@@ -8,6 +8,8 @@ public class playerHealth : MonoBehaviour
 
     public static int health;
 
+    
+
     private void Start()
     {
         health = 100;
@@ -21,7 +23,7 @@ public class playerHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
     }
 }
